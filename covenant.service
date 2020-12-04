@@ -1,0 +1,12 @@
+[Unit]
+Description="SystemD service for Covenant C2 server"
+
+[Service]
+Type=simple
+Restart=on-failure
+Environment="HOME=/root"
+WorkingDirectory=/opt/covenant/Covenant
+ExecStart=/usr/bin/dotnet run --project /opt/covenant/Covenant
+
+[Install]
+WantedBy=multi-user.target
